@@ -10,21 +10,88 @@ html {
     margin: 0;
 }
 
-.iframe-container{
+.iframe-container {
     max-width: 500px;
     width: 100%;
     max-height: 300px;
     height: 100%;
+    position: relative;
 }
 
 #iframe-id {
     width: 100%;
     height: 100%;
-        margin: 0;
-
+    margin: 0;
 }
 
-.space-maker{
+#mask-iframe-id {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: aquamarine;
+    position: absolute;
+    top: 0;
+    opacity: 0.3;
+
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .3;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .3;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    pointer-events: all;
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: .3;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: .3;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+    pointer-events: none;
+}
+
+.space-maker {
     width: 100%;
     height: 700px;
     background-color: dimgrey;
