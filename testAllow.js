@@ -1,32 +1,32 @@
 function onLoadTest() {
-//    
-//    window.addEventListener("deviceorientation", function(event) {
-//        var iframeElement = document.getElementById("iframe-id-1");
-//        iframeElement.contentWindow.postMessage(
-//            {
-//                alpha: event.alpha,
-//                beta: event.beta,
-//                gamma: event.gamma
-//            },
-//            "*"
-//        );
-//    });
-//
-//    window.addEventListener(
-//        "orientationchange",
-//        function() {
-//            console.log("orientationchange");
-//            var iframe = document.getElementById("iframe-id-1");
-//
-//            iframe.contentWindow.postMessage(
-//                {
-//                    orientation: window.orientation
-//                },
-//                "*"
-//            );
-//        },
-//        false
-//    );
+    
+    window.addEventListener("deviceorientation", function(event) {
+        var iframeElement = document.getElementById("iframe-id-1");
+        iframeElement.contentWindow.postMessage(
+            {
+                alpha: event.alpha,
+                beta: event.beta,
+                gamma: event.gamma
+            },
+            "*"
+        );
+    });
+
+    window.addEventListener(
+        "orientationchange",
+        function() {
+            console.log("orientationchange");
+            var iframe = document.getElementById("iframe-id-1");
+
+            iframe.contentWindow.postMessage(
+                {
+                    orientation: window.orientation
+                },
+                "*"
+            );
+        },
+        false
+    );
 }
 
 //Making sure that the HTML is loaded
