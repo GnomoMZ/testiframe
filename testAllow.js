@@ -19,7 +19,6 @@ function onLoadTest() {
         function() {
             console.log("orientationchange");
             var iframe = document.getElementById("iframe-id-1");
-            console.log(iframe);
 
             iframe.contentWindow.postMessage(
                 {
@@ -32,10 +31,10 @@ function onLoadTest() {
     );
     var frame = document.getElementById("iframe-id-1");
 
-    setInterval(function() {
-        frame.contentWindow.postMessage({ pepe: 2 }, "*");
-        console.log("send");
-    }, 10000);
+//    setInterval(function() {
+//        frame.contentWindow.postMessage({ pepe: 2 }, "*");
+//        console.log("send");
+//    }, 10000);
 
 }
 
