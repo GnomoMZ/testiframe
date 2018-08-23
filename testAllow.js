@@ -3,6 +3,7 @@ function onLoadTest() {
         console.log("deviceorientation");
 
         var iframeElement = document.getElementById("iframe-id-1");
+        console.log(iframeElement);
         iframeElement.contentWindow.postMessage(
             {
                 alpha: event.alpha,
@@ -18,6 +19,8 @@ function onLoadTest() {
         function() {
             console.log("orientationchange");
             var iframe = document.getElementById("iframe-id-1").contentWindow;
+                    console.log(iframe);
+
             iframe.postMessage(
                 {
                     orientation: window.orientation
