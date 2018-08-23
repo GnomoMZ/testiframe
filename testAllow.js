@@ -1,41 +1,32 @@
 function onLoadTest() {
-    window.addEventListener("deviceorientation", function(event) {
-        console.log("deviceorientation");
-
-        var iframeElement = document.getElementById("iframe-id-1");
-        console.log(iframeElement);
-        iframeElement.contentWindow.postMessage(
-            {
-                alpha: event.alpha,
-                beta: event.beta,
-                gamma: event.gamma
-            },
-            "*"
-        );
-    });
-
-    window.addEventListener(
-        "orientationchange",
-        function() {
-            console.log("orientationchange");
-            var iframe = document.getElementById("iframe-id-1");
-
-            iframe.contentWindow.postMessage(
-                {
-                    orientation: window.orientation
-                },
-                "*"
-            );
-        },
-        false
-    );
-    var frame = document.getElementById("iframe-id-1");
-
-//    setInterval(function() {
-//        frame.contentWindow.postMessage({ pepe: 2 }, "*");
-//        console.log("send");
-//    }, 10000);
-
+//    
+//    window.addEventListener("deviceorientation", function(event) {
+//        var iframeElement = document.getElementById("iframe-id-1");
+//        iframeElement.contentWindow.postMessage(
+//            {
+//                alpha: event.alpha,
+//                beta: event.beta,
+//                gamma: event.gamma
+//            },
+//            "*"
+//        );
+//    });
+//
+//    window.addEventListener(
+//        "orientationchange",
+//        function() {
+//            console.log("orientationchange");
+//            var iframe = document.getElementById("iframe-id-1");
+//
+//            iframe.contentWindow.postMessage(
+//                {
+//                    orientation: window.orientation
+//                },
+//                "*"
+//            );
+//        },
+//        false
+//    );
 }
 
 //Making sure that the HTML is loaded
