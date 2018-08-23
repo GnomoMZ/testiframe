@@ -18,10 +18,10 @@ function onLoadTest() {
         "orientationchange",
         function() {
             console.log("orientationchange");
-            var iframe = document.getElementById("iframe-id-1").contentWindow;
-                    console.log(iframe);
+            var iframe = document.getElementById("iframe-id-1");
+            console.log(iframe);
 
-            iframe.postMessage(
+            iframe.contentWindow.postMessage(
                 {
                     orientation: window.orientation
                 },
@@ -30,6 +30,13 @@ function onLoadTest() {
         },
         false
     );
+    var frame = document.getElementById("iframe-id-1");
+
+    setInterval(function() {
+        frame.contentWindow.postMessage({ pepe: 2 }, "*");
+        console.log("send");
+    }, 10000);
+
 }
 
 //Making sure that the HTML is loaded
