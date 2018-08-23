@@ -1,8 +1,6 @@
 function onLoadTest() {
-    console.log("aca");
             var currentElem = document.getElementById("iframe-id-1");
-    console.log(currentElem);
-    currentElem.setAttribute('allow', 'gyroscope; accelerometer');
+//    currentElem.setAttribute('allow', 'gyroscope; accelerometer');
 
 }
 
