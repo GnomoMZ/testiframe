@@ -41,6 +41,16 @@ function onLoadMasks() {
             }
         }
     });
+
+    var i = 0;
+
+    
+    setInterval(()=>{
+        window.scroll(0, i * 100);
+        console.log("Acaaa");
+        i++;
+    },2500);
+
 }
 
 //Making sure that the HTML is loaded
