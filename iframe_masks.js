@@ -42,13 +42,10 @@ function onLoadMasks() {
         }
     });
 
-    var i = 0;
 
     
     setInterval(()=>{
-        window.scroll(0, i * 100);
-        console.log("Acaaa");
-        i++;
+        window.scroll(0, 1);
     },2500);
 
 }
