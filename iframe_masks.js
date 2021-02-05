@@ -13,7 +13,7 @@ function onLoadMasks() {
     for (var i = 0; i < masks.length; i++) {
         var currentElem = document.getElementById(masks[i]);
         maskedElements.push(currentElem);
-        currentElem.addEventListener("click", function() {
+        currentElem.addEventListener("click", function () {
             event.stopPropagation();
             OnElementClick(this);
         });
@@ -28,7 +28,7 @@ function onLoadMasks() {
         }
     }
 
-    window.addEventListener("click", function() {
+    window.addEventListener("click", function () {
         for (var i = 0; i < maskedElements.length; i++) {
             maskedElements[i].classList.add(inClass);
             maskedElements[i].classList.remove(outClass);
@@ -42,31 +42,9 @@ function onLoadMasks() {
         }
     });
 
-    window.scroll(0, 0);
-
-    var lastTouchX, lastTouchY;
-    var scrollValue = 0;
-
-    document.addEventListener("touchstart", (event)=>{
-        document.getElementById("feedback").innerHTML = event.target;
-        lastTouchY = event.touches[0].clientY;
-    }, false);
 
 
-    document.addEventListener("touchmove", (event)=>{
-        document.getElementById("feedback").innerHTML = event.target;
-        currentY = event.touches[0].clientY;
 
-        scrollValue += lastTouchY - currentY;
-
-        window.scrollTo(0,  scrollValue);
-
-        lastTouchY = currentY;
-
-
-    }, false);
-
-    
     /*setInterval(()=>{
         console.log("Aca");
         window.scroll(0, 100);
@@ -80,7 +58,7 @@ if (window.attachEvent) {
 } else {
     if (window.onload) {
         var curronload = window.onload;
-        var newonload = function(evt) {
+        var newonload = function (evt) {
             curronload(evt);
             onLoadMasks(evt);
         };
@@ -89,3 +67,31 @@ if (window.attachEvent) {
         window.onload = onLoadMasks;
     }
 }
+
+
+window.scroll(0, 0);
+
+var lastTouchY;
+var scrollValue = 0;
+
+document.addEventListener("touchstart", (event) => {
+    document.getElementById("feedback").innerHTML = event.target;
+    lastTouchY = event.touches[0].clientY;
+}, false);
+
+
+document.addEventListener("touchmove", (event) => {
+    document.getElementById("feedback").innerHTML = event.target;
+    currentY = event.touches[0].clientY;
+
+    scrollValue += lastTouchY - currentY;
+
+    window.scrollTo({
+        top: scrollValue,
+        left: 0,
+        behavior: 'smooth'
+    });
+    lastTouchY = currentY;
+
+
+}, false);
