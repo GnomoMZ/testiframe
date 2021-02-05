@@ -43,10 +43,17 @@ function onLoadMasks() {
     });
 
 
+    document.addEventListener("touchstart", (event)=>{
+        console.log("Aca", event.target);
+        document.getElementById("feedback").innerHTML = event.target;
+
+    }, false);
+
     
-    setInterval(()=>{
+    /*setInterval(()=>{
+        console.log("Aca");
         window.scroll(0, 100);
-    },2500);
+    },2500);*/
 
 }
 
