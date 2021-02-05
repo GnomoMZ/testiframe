@@ -75,13 +75,12 @@ var lastTouchY;
 var scrollValue = 0;
 
 document.addEventListener("touchstart", (event) => {
-    document.getElementById("feedback").innerHTML = event.target;
     lastTouchY = event.touches[0].clientY;
 }, false);
 
 
+
 document.addEventListener("touchmove", (event) => {
-    document.getElementById("feedback").innerHTML = event.target;
     currentY = event.touches[0].clientY;
 
     scrollValue += lastTouchY - currentY;
@@ -93,12 +92,32 @@ document.addEventListener("touchmove", (event) => {
     if (scrollValue > maxScrollValue)
         scrollValue = maxScrollValue;
 
-    window.scrollTo({
-        top: scrollValue,
-        left: 0,
-        behavior: 'smooth'
-    });
     lastTouchY = currentY;
 
 
 }, false);
+
+var elapsed;
+
+var lastTime;
+
+function step(timestamp) {
+
+    if (lastTime === undefined)
+        lastTime = timestamp ;
+    elapsed = timestamp - lastTime;
+    lastTime = timestamp;
+
+    window.scrollTo(0, lerp(document.documentElement.scrollTop, scrollValue, elapsed / 100));
+
+    window.requestAnimationFrame(step);
+
+}
+
+window.requestAnimationFrame(step);
+
+function lerp(start, end, amt) {
+    if (amt > 1)
+        amt = 1;
+    return (1 - amt) * start + amt * end;
+}
