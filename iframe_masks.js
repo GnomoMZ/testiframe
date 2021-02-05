@@ -45,7 +45,7 @@ function onLoadMasks() {
 
     
     setInterval(()=>{
-        window.scroll(0, 1);
+        window.scroll(0, 100);
     },2500);
 
 }
