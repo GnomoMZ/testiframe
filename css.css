@@ -8,6 +8,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
     font-weight: 100;
     margin: 0;
+    overflow: hidden;
 }
 
 .iframe-container {

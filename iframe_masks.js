@@ -42,10 +42,27 @@ function onLoadMasks() {
         }
     });
 
+    window.scroll(0, 0);
+
+    var lastTouchX, lastTouchY;
+    var scrollValue = 0;
 
     document.addEventListener("touchstart", (event)=>{
-        console.log("Aca", event.target);
         document.getElementById("feedback").innerHTML = event.target;
+        lastTouchY = event.touches[0].clientY;
+    }, false);
+
+
+    document.addEventListener("touchmove", (event)=>{
+        document.getElementById("feedback").innerHTML = event.target;
+        currentY = event.touches[0].clientY;
+
+        scrollValue += lastTouchY - currentY;
+
+        window.scrollTo(0,  scrollValue);
+
+        lastTouchY = currentY;
+
 
     }, false);
 
