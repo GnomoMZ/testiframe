@@ -85,6 +85,13 @@ document.addEventListener("touchmove", (event) => {
     currentY = event.touches[0].clientY;
 
     scrollValue += lastTouchY - currentY;
+    if (scrollValue < 0)
+        scrollValue = 0;
+
+    var maxScrollValue = document.body.clientHeight - window.screen.height;
+
+    if (scrollValue > maxScrollValue)
+        scrollValue = maxScrollValue;
 
     window.scrollTo({
         top: scrollValue,
