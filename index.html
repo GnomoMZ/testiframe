@@ -1,38 +1,1538 @@
-<!DOCTYPE html>
-<html>
-    <head> 
-        <link rel="stylesheet" href="css.css">
-        <script src="iframe_masks.js"></script>
-        <script src="sendGyroEvents.js"></script>
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+<!-- needed for mobile devices - GALLERY INTEGRATION -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+	
+<title>iMOD FORM</title>
 
-    </head>
-    <body>
-        <span id="feedback"></span>
-        <div class="space-maker"></div>
-        <div class="iframe-container">
-            <iframe id="iframe-id-1" src="https://interactive-3dapps.com/000-mediacombiners/test2/" frameBorder="0"></iframe>
-            <div id="mask-iframe-1" class="maskClass animation">
-                <span>CLOSE FOR X</span>
-            </div>
-<!--
-             <div id="mask-iframe-1-close" class="mask-close animation">
-                 <img src="Bot-Close-128.jpg"> 
-             </div>
--->
+    
+<script>var __adobewebfontsappname__="dreamweaver"</script>
+<script src="https://use.edgefonts.net/source-sans-pro:n2:default.js" type="text/javascript"></script>
+    
+	
+	<!-- Import font -->
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+	
+	<!-- Import font - GALLERY INTEGRATION-->
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css">
+	
+	
+	<!-- Style for Bootstrap - GALLERY INTEGRATION - SE ROMPE LA WEB SI LO SACO-->
+<!--	<link rel="stylesheet" href="slider/bootstrap/css/bootstrap.min.css">-->
+	
+<!-- Custom style for the demo- GALLERY INTEGRATION - SE ROMPE LA WEB SI LO SACO-->
+<!--	<link rel="stylesheet" href="slider/css/demo.css">-->
+	
+	
+	
+	<!-- Stylesheets BASE WEB-->
+	<link rel="stylesheet" href="j-folder/css/font-awesome.min.css">
+	<link rel="stylesheet" href="j-folder/css/j-forms.css">
+	
+	
+	
+	
+	<style>
+     
+        
+        
+        /*EXAMPLES --------------------------------------------------------------------- */
+        
+        
+            .left {
+              display: inline-block;
+              width: 100px;
+
+              background: red;
+              color: white;
+            }
+            .right {
+              display: inline-block;
+              width: calc(100% - 100px);
+
+              background: blue;
+              color: white;
+            }
+
+        
+        
+
+		/* Set the style of the thumbnail overlay items */
+		.media-box-title{
+			color: #fff;
+			font-size: 11px;
+			margin-bottom: 5px;
+			text-transform: uppercase;
+		    letter-spacing: 2px;
+		    line-height: 28px;
+		}
+
+
+		/* Remove box shadow and border-radius from the media boxes */
+		.media-box-container{
+			  -webkit-border-radius: 0px;
+			  	 -moz-border-radius: 0px;
+			  		  border-radius: 0px;
+
+			  -webkit-box-shadow: none;
+			  	 -moz-box-shadow: none;
+			  	   -o-box-shadow: none;
+			      -ms-box-shadow: none;
+			  		  box-shadow: none;
+		}
+
+		/* thumbnail overlay background */
+		.thumbnail-overlay{
+    		background-color: rgba(0,0,0, .40);
+
+    		-webkit-transition: background-color 0.2s ease-out;
+		       -moz-transition: background-color 0.2s ease-out;
+		         -o-transition: background-color 0.2s ease-out;
+		            transition: background-color 0.2s ease-out;
+		}
+
+		/* hover effect on the thumbnail-overlay */
+		.thumbnail-overlay:hover{
+    		background-color: rgba(0,0,0, .20) !important;
+		}
+		
+		/* hover effect on the image */
+		.media-box-image img{
+		    -webkit-transition: transform 0.6s ease-in-out;
+		       -moz-transition: transform 0.6s ease-in-out;
+		         -o-transition: transform 0.6s ease-in-out;
+		        -ms-transition: transform 0.6s ease-in-out;
+		            transition: transform 0.6s ease-in-out;
+
+		    -webkit-transform-origin: bottom left;
+		       -moz-transform-origin: bottom left;
+		         -o-transform-origin: bottom left;
+		        -ms-transform-origin: bottom left;
+		            transform-origin: bottom left;
+		}
+		.media-box-image:hover img{
+		    -webkit-transform: scale(1.2) translate(-20px);
+		       -moz-transform: scale(1.2) translate(-20px);
+		         -o-transform: scale(1.2) translate(-20px);
+		        -ms-transform: scale(1.2) translate(-20px);
+		            transform: scale(1.2) translate(-20px);
+		}
+        
+        
+    
+
+
+        .button {
+            width: 200px;
+            margin-top: 40px;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-left: auto;
+            padding-top: 20px;
+            padding-right: 10px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 0px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border: 3px solid #FFFFFF;
+            color: #FFFFFF;
+            transition: all 0.3s linear;
+        }
+        .button:hover {
+            background-color: #FEFEFE;
+            color: #C4C4C4;
+            cursor: pointer;
+        }
+
+        /* Mobile */
+        @media (max-width: 320px) {
+        .logo {
+            width: 100%;
+            text-align: center;
+            margin-top: 13px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+        .container header nav {
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            width: 100%;
+            float: none;
+            display: none;
+        }
             
-        </div>
-<!--        <div class="space-maker"></div>-->
-         <div class="iframe-container">
-            <iframe id="iframe-id-2" src="https://interactive-3dapps.com/000-mediacombiners/test2/" frameBorder="0"></iframe>
-            <div id="mask-iframe-2" class="maskClass animation">
-                <span>CLOSE FOR X</span>
-            </div>
-             <div id="mask-iframe-2-close" class="mask-close animation">
-                 <img src="Bot-Close-128.jpg"> 
-             </div>
-        </div>
-        <div class="space-maker"></div>
-        <div class="space-maker"></div>
+            
+        nav ul li {
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            width: 100%;
+            text-align: center;
+        }
+            
+        .text_column {
+            width: 100%;
+            text-align: justify;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+            
+        .thumbnail {
+            width: 100%;
+        }
+            
+                    .footer_column {
+            width: 100%;
+            margin-top: 0px;
+        }
+            
+        .parallax {
+            text-align: center;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            padding-top: 40%;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            width: 100%;
+            font-size: 18px;
+        }
+            
+        .parallax_description {
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            width: 90%;
+            margin-top: 25px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 12px;
+            float: none;
+            text-align: center;
+        }
+            
+        .banner {
+            background-color: #2D9AB7;
+            background-image: none;
+        }
+            
+        .tagline {
+            margin-top: 20px;
+            line-height: 22px;
+        }
+            
+        .hero_header {
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 22px;
+            text-align: center;
+        }
+        }
 
-    </body>
+        
+        
+        /* Small Tablets */
+        @media (min-width: 321px)and (max-width: 767px) {
+        .logo {
+            width: 100%;
+            text-align: center;
+            margin-top: 13px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            color: #043745;
+        }
+        .container header nav {
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            width: 100%;
+            float: none;
+            overflow: auto;
+            display: inline-block;
+            background: #52bad5;
+        }
+        header nav ul {
+            padding: 0px;
+            float: none;
+        }
+        nav ul li {
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            width: 100%;
+            text-align: center;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        .text_column {
+            width: 100%;
+            text-align: left;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+        .thumbnail {
+            width: 100%;
+        }
+        .footer_column {
+            width: 100%;
+            margin-top: 0px;
+        }
+        .parallax {
+            text-align: center;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            padding-top: 40%;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            width: 100%;
+            font-size: 18px;
+        }
+        .parallax_description {
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            margin-top: 30%;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+        .thumbnail {
+            width: 50%;
+        }
+        .parallax {
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-top: 20%;
+        }
+        .parallax_description {
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            width: 100%;
+            padding-top: 30px;
+        }
+        .banner {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .footer_column {
+            width: 100%;
+        }
+        }
+
+        /* Small Desktops */
+        @media (min-width: 768px) and (max-width: 1096px) {
+        .text_column {
+            width: 100%;
+        }
+        .thumbnail {
+            width: 50%;
+        }
+        .text_column {
+            width: 100%;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+        .banner {
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*BODY --------------------------------------------------------------------- */
+        
+        
+            
+        html,  body {
+            
+        font-family: 'Open Sans', sans-serif !important;
+        background-color: #f2f2f2 !important;
+        margin-top: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+        font-style: normal !important;
+        font-weight: 200 !important;
+        text-decoration: none !important;    
+            
+		margin: 0 !important;
+		padding: 0 !important;
+		height: 100% !important;
+		width: 100% !important;
+            
+            
+/*        max-width: 100%;*/
+/*        overflow-x: hidden;*/
+        
+   		scrollbar-color: rgba(200,200,200, .3) rgba(200,200,200, .0);
+    	scrollbar-width: thin;
+    	-moz-appearance: none !important;
+    	-moz-appearance: none !important;
+    	-moz-appearance: none !important;
+    	-moz-appearance: none !important;
+    	}
+        
+        
+        body::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        
+        
+        body::-webkit-scrollbar-thumb {
+            background: rgba(200,200,200, .7);
+            border-radius: 10px;
+        }
+        
+        
+        
+        a:link {
+            text-decoration: none;
+        }
+        a:visited {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        a:active {
+            text-decoration: none;
+        }    
+            
+        
+        
+        
+        
+        /*FRANJAS --------------------------------------------------------------------- */
+        
+        
+        .franja-sup {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #000000;
+            box-shadow: 0px 4px 10px black;
+            z-index: 1000;
+        }
+
+        .franja-inf {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #000000;
+            box-shadow: 0px -4px 10px black;
+            z-index: 1000;
+        }
+        
+                
+        .franja {
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background-color: rgba(0,0,0,0.00);
+        }
+        
+        
+        
+        
+        
+        
+        /*LOADER --------------------------------------------------------------------- */
+		
+        
+		.loader-wrapper {
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: #000000;
+/*		background-color: #242f3f;	*/
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 9998;
+		}
+		
+		
+		.loader {
+		  display: inline-block;
+		  width: 30px;
+		  height: 30px;
+		  position: relative;
+		  border: 4px solid #Fff;
+		  animation: loader 2s infinite ease;
+		}
+		
+		
+		.loader-inner {
+		  vertical-align: top;
+		  display: inline-block;
+		  width: 100%;
+		  background-color: #fff;
+		  animation: loader-inner 2s infinite ease-in;
+		}
+
+		@keyframes loader {
+		  0% {
+			transform: rotate(0deg);
+		  }
+
+		  25% {
+			transform: rotate(180deg);
+		  }
+
+		  50% {
+			transform: rotate(180deg);
+		  }
+
+		  75% {
+			transform: rotate(360deg);
+		  }
+
+		  100% {
+			transform: rotate(360deg);
+		  }
+		}
+
+		@keyframes loader-inner {
+		  0% {
+			height: 0%;
+		  }
+
+		  25% {
+			height: 0%;
+		  }
+
+		  50% {
+			height: 100%;
+		  }
+
+		  75% {
+			height: 100%;
+		  }
+
+		  100% {
+			height: 0%;
+		  }
+		}
+        
+        
+        
+        .imod-1{
+		
+		position: fixed;
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif; 
+        color: azure;
+        padding-top: 30px;
+        left: 50%;
+        transform: translate(-50%, -0%);
+		}
+        
+        
+        .imod-2{
+		
+		position: fixed;
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif; 
+        color: azure;
+        margin-top: -24px;
+        left: -4px;
+        transform: translate(-50%, -0%);
+            
+            transform: rotate(180deg);
+
+
+          /* Legacy vendor prefixes that you probably don't need... */
+
+          /* Safari */
+          -webkit-transform: rotate(180deg);
+
+          /* Firefox */
+          -moz-transform: rotate(180deg);
+
+          /* IE */
+          -ms-transform: rotate(180deg);
+
+          /* Opera */
+          -o-transform: rotate(180deg);
+
+          /* Internet Explorer */
+          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=6);
+            
+		}
+        
+        /*END LOADER*/
+        
+        
+        
+        
+        
+        
+                
+        /*VARIOS --------------------------------------------------------------------- */
+        
+        
+        .container {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 1000px;
+            background-color: rgba(255,255,255,0.00);
+        }
+
+        
+        .box1 {
+            top: 0;
+            width: 100%;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: rgba(255,255,255,0.00);
+            clear:both;
+/*            float: left;*/
+        }
+        
+            
+        
+/*
+        .j-forms {
+
+            float: left;
+        }
+*/
+        
+        
+        
+        
+		/* Cambio de la barra de iconos a la izquierda */
+        
+		.fancybox-toolbar {
+            left: 50% !important;	
+            top: 0;
+            transform: translate(-60px, -0%);
+/*        padding-right: 50px;*/
+/*        right: 100px; */
+    
+		}
+        
+        
+        
+        /*ESPACIOS --------------------------------------------------------------------- */
+        
+        
+        .espacio {
+            top: 0;
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 0px;
+            background-color: rgba(255,255,255,0.00);
+        }
+
+        .espacio_2 {
+            top: 0;
+            width: 100%;
+            padding-top: 5px;
+            padding-bottom: 0px;
+            background-color: rgba(255,255,255,0.00);
+        }
+
+        .espacio_3 {
+            top: 0;
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 0px;
+            background-color: rgba(255,255,255,0.00);
+
+        }
+
+        .espacio_inf {
+            top: 0;
+            width: 100%;
+            padding-top: 100px;
+            padding-bottom: 0px;
+            background-color: rgba(255,255,255,0.00);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        /*BOTONES --------------------------------------------------------------------- */
+        
+        		
+		.boton-pdf {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: 16px 'Open Sans',Helvetica,Arial,sans-serif;
+            background-color: rgba(0, 0, 0, 100);
+            color: #614f41;
+            border-radius: 0px 0px 0px 0px;
+            cursor: pointer;
+            width: 100%;
+            height: 50px;
+            border-bottom-style: none;
+			border-width: 0px;
+			text-decoration: none !important;
+            margin: auto;
+            padding: 0px;
+            
+
+       }
+		
+        
+		.boton-pdf:hover {
+            background-color: #888888;
+			border-width: 0px;
+			border-bottom-style: none;
+			text-decoration: none !important;
+		}
+        
+        
+        
+        
+        
+        /*TEXTOS --------------------------------------------------------------------- */
+        
+		
+		.texto-boton-pdf {
+            text-decoration: none !important;
+            color: #fff;
+            
+       }
+		
+
+        
+        .titulo1_box_1 {
+			text-align: left;
+			margin-top: 0px;
+			margin-right: 0px;
+			margin-bottom: 0px;
+			margin-left: 0px;
+			letter-spacing: 0px;
+			font-size: 30px;
+			font-weight: 800 !important;
+            color: #4E4E4E !important;
+       }
+        
+        
+        
+		.titulo2_box_1 {
+            text-align: left;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            letter-spacing: 0px;
+            font-size: 100px;
+            font-weight: 900;
+            text-decoration: none !important;
+            color: #E14977;
+       }
+		
+		
+        .texto_negro {
+            text-decoration: none !important;
+            color: #E14977 !important;
+       }
+		
+		
+        .texto_box_1 {
+            color: #5B5B5B;
+            text-align: left;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            letter-spacing: 0px;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        
+        
+	
+   
+
+		
+		
+		
+        /* IMAGENES ----------------------------------------------------------- */
+        
+			.planta{
+            background-color: rgba(0, 0, 0, 100);
+            color: #614f41;
+/*
+            padding-top: 13px;
+			padding-bottom: 13px;
+            padding-left: 6px;
+            padding-right: 6px;
+            border-radius: 0px 0px 0px 0px;
+*/
+            cursor: pointer;
+            max-width: 100% !important;
+            width: 100% !important;
+            text-align: center;
+            display: block;
+            margin: auto;
+			border-bottom-style: none;
+			border-width: 0px;
+			text-decoration: none !important;
+       }
+		
+				
+		
+		
+		.imagen-1{
+            background-color: rgba(0, 0, 0, 100);
+            color: #614f41;
+/*            min-width: 450px;*/
+
+            cursor: pointer;
+            max-width: 100% !important;
+            width: 100% !important;
+            text-align: center;
+            display: block;
+            margin: 0%;
+			margin-bottom: 0%;
+			border-bottom-style: none;
+			border-width: 0px;
+			text-decoration: none !important;
+			justify-content: space-between;
+            opacity: 1;
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.6);  
+            transition: 0.5s;
+       }
+		
+        
+            .imagen-1:hover {
+		    opacity: 0.5;
+            transform: scale(1.025);
+            box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.4);    
+                
+            }
+
+      
+        
+        
+        
+		
+        
+        /* VF INTEGRATION  ----------------------------------------------------------- */
+        
+        
+    
+        
+        .cont-vf{
+	       width: 100%;
+		   margin: auto;
+        }
+        
+        
+       .right-vf{
+	       width: 49%;
+           padding-left: 1%;
+           padding-bottom: 2%;
+		   float: right;
+         }
+        
+        
+       .left-vf{
+	       width: 49%;
+           padding-right: 1%;
+           padding-bottom: 2%;
+		   float: left;
+        }
+        
+        
+       .imag-vf{
+	       width: 100%;
+		   height: auto;
+		   margin-bottom: 15px;
+           background-color: rgba(0, 0, 0, 100);
+           color: #614f41;
+           cursor: pointer;
+           max-width: 100% !important;
+           width: 100% !important;
+           opacity: 1;
+           box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.6);  
+           transition: 0.5s;
+        }
+        
+        
+        .imag-vf:hover {
+		    opacity: 0.5;
+            transform: scale(1.025);
+            box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.4);    
+                
+            }
+        
+        
+        
+       .otro-vf{
+	       width: 100%;
+		   background-color: antiquewhite;
+		   margin-bottom: 50px;
+           padding-bottom: 10px;
+		   float: left
+        }
+        
+ 	
+	@media screen and (max-width:768px) {
+        .right-vf{
+            width: 100%;
+            padding-left: 0%;
+            float: none
+        }
+        
+        
+        .left-vf{
+            width: 100%;
+            padding-right: 0%;
+            float: none
+        }
+        
+        
+        
+    }
+        
+        
+        
+        
+        .ocultar_campos{
+        visibility: hidden !important;
+        display: none !important;    
+        }
+        
+        
+        
+        
+        
+		
+	</style>
+	
+
+    
+    
+    
+    
+
+</head>
+
+
+    
+    
+    
+    
+    
+<body>
+    
+        
+<!-- LOADER  -->	
+
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"><p class="imod-1">iMOD</p><p class="imod-2">iMOD</p></span></span>
+</div>
+	
+    
+    
+    
+	
+<!-- Franja estaticas superior e inferior -->
+	
+<!--
+<div class="franja-sup"></div>
+<div class="franja-inf"></div>
+	-->
+	
+	
+    
+    
+    
+<!-- Main Container -->
+	
+<div class="container">
+	
+	<!-- Franja movil que da margen superior - OCULTA DETRAS DE LA FRANJA ESTATICA -->
+	<div class="franja"></div>
+	
+	
+	<!-- ENCABEZADO - DATOS TRAIDOS DE IMOD -->
+	<div class="box1">
+
+	<h2 class="titulo1_box_1">Tipología</h2>
+	<h2 id="description2_param" class="titulo2_box_1">Cargando Datos</h2>
+	
+	<div class="espacio"></div>
+<!--	<h2 class="titulo1_box_1">Departamento</h2>-->
+	<h2 id="name_param" class="titulo1_box_1">Cargando Datos</h2>		
+	<div class="espacio_3"></div>	
+        
+    <div id="description_param_hide">
+	    <p id="description_param" class="texto_box_1">
+		
+		Cargando Descripción
+	
+	    </p>
+    </div>    
+	</div>
+	<!-- FINALE ENCABEZADO -->
+	
+	
+	
+	<!-- IMAGEN ESTATICA TRAIDA DEL IMOD-->	
+	
+<!--
+	<div>
+	<img id="gen_field_1_param" src="https://xline3d.info/works/imod/aria/aria-form/loading-image.jpg" alt="" width="1280" class="imagen-1" style="width: 100%; max-width: 1280px; height: auto;"/>
+	</div>
+-->
+	
+	<!-- FIN IMAGEN ESTATICA -->
+	
+    
+    
+    
+	
+	
+	
+	<!-- IMAGEN ESTATICA TRAIDA DEL IMOD CON FANCYBOX-->	
+	
+<!--
+	<a id="gen_field_duro_param" href="https://xline3d.info/works/imod/aria/aria-form/loading-image.jpg" data-fancybox="images" data-width="1280" data-height="720">
+    <img id="gen_field_1_param" src="https://xline3d.info/works/imod/aria/aria-form/loading-image.jpg" alt="" width="1280" class="imagen-1" style="width: 100%; max-width: 1280px; height: auto;"/>
+	</a>
+-->
+	
+	<!-- FIN IMAGEN ESTATICA -->
+    
+    
+    <!-- PLANTA -->
+    
+    <a id="gen_field_2_param_fancy" href="#" data-fancybox="images" data-width="1280" data-height="720">
+    <img id="gen_field_2_param" src="#" alt="" width="1280" class="planta" style="width: 100%; max-width: 1280px; height: auto;"/>
+	</a>
+	
+    <!-- FIN PLANTA -->
+    
+	<div class="espacio_3"></div>
+    
+    
+    
+    
+        
+<!--
+    <div id="image1_param_fancy" href="#" data-fancybox="images" data-width="1920" data-height="1080">
+    <img id="image1_param" src="#" alt="" width="1280" class="imagen-1" style="width: 100%; max-width: 1280px; height: auto;"/>
+	</div>
+-->
+	
+	
+    
+    
+<!--    <div class="espacio_3"></div>-->
+    
+        
+    
+    
+    <div class="cont-vf">
+	
+        
+    <div class="left-vf">
+        <a id="image1_param_fancy" href="#" data-fancybox="images" data-width="1920" data-height="1080">
+    		<img id="image1_param" src="#" alt="" width="1280" class="imag-vf" style="width: 100%; max-width: 1280px; height: auto;"/>
+        </a>
+    </div>
+	
+        
+    <div class="right-vf">
+        <a id="image2_param_fancy" href="#" data-fancybox="images" data-width="1920" data-height="1080">
+    		<img id="image2_param" src="#" alt="" width="1280" class="imag-vf" style="width: 100%; max-width: 1280px; height: auto;"/>
+        </a>
+    </div>
+        
+        
+    <div class="left-vf">
+        <a id="image3_param_fancy" href="#" data-fancybox="images" data-width="1920" data-height="1080">
+    		<img id="image3_param" src="#" alt="" width="1280" class="imag-vf" style="width: 100%; max-width: 1280px; height: auto;"/>
+        </a>
+    </div>
+	
+        
+    <div class="right-vf">
+        <a id="image4_param_fancy" href="#" data-fancybox="images" data-width="1920" data-height="1080">
+    		<img id="image4_param" src="#" alt="" width="1280" class="imag-vf" style="width: 100%; max-width: 1280px; height: auto;"/>
+        </a>
+    </div>
+        
+    
+    <div class="left-vf">
+        <a id="image5_param_fancy" href="#" data-fancybox="images" data-width="1920" data-height="1080">
+    		<img id="image5_param" src="#" alt="" width="1280" class="imag-vf" style="width: 100%; max-width: 1280px; height: auto;"/>
+        </a>
+    </div>
+	
+        
+    <div class="right-vf">
+        <a id="image6_param_fancy" href="#" data-fancybox="images" data-width="1920" data-height="1080">
+    		<img id="image6_param" src="#" alt="" width="1280" class="imag-vf" style="width: 100%; max-width: 1280px; height: auto;"/>
+        </a>
+    </div>    
+        
+        
+        
+    </div>	
+    
+
+    
+    
+	<div class="espacio_3"></div>
+	<div class="espacio_3"></div>
+	
+	
+	<div class="box1">
+	<h2 class="titulo1_box_1">Formulario de Contacto</h2>
+	</div>
+	
+	
+	
+	<!-- ESPACIADOR -->	
+	<div class="espacio_3"></div>
+	
+<!-- FORMULARIO COMPRADO -->
+	
+	<form action="j-folder/php/action.php" method="post" class="j-forms" id="j-forms" novalidate>
+
+            <div class="content">
+                
+                <!-- start tipology -->
+				<div class="ocultar_campos">
+					<label class="label">TIPOLOGIA</label>
+					<div class="input">
+					  <input type="text" placeholder="" id="tipology" name="tipology" class="campo-input" readonly="true">
+					</div>
+				</div>
+                <!-- end tipology -->
+
+                <!-- start apartment_name -->
+				<div class="ocultar_campos">
+					<label class="label">DEPARTAMENTO</label>
+					<div class="input">
+					  <input type="text" placeholder="" id="apartment_name" name="apartment_name" class="campo-input" readonly="true">
+                        
+<!--                        <input type="text" placeholder="" id="apartment_name" name="apartment_name" class="campo-input-disabled" disabled="true">-->
+                        
+					</div>
+				</div>
+                <!-- end apartment_name -->
+                
+                
+
+				<!-- start name -->
+				<div class="unit">
+					<label class="label">NOMBRE Y APELLIDO</label>
+					<div class="input">
+					  <input type="text" placeholder="" id="name" name="name" class="campo-input">
+					</div>
+				</div>
+				<!-- end name -->
+				
+				<!-- start rut -->
+<!--
+				<div class="unit">
+					<label class="label">RUT</label>
+					<div class="input">
+					  <input type="text" placeholder="" id="rut" name="rut" class="campo-input">
+					</div>
+				</div>
+-->
+				<!-- end rut -->
+
+				<!-- start email -->
+				<div class="unit">
+					<label class="label">EMAIL</label>
+					<div class="input">
+					  <input type="email" placeholder="" id="email" name="email" class="campo-input">
+					</div>
+				</div>
+				<!-- end email -->
+
+				<!-- start phone -->
+				<div class="unit">
+					<label class="label">TELEFONO</label>
+					<div class="input">
+					  <input type="text" placeholder="" id="phone" name="phone" class="campo-input">
+					</div>
+				</div>
+				<!-- end phone -->
+
+				<!-- start textarea -->
+				<div class="unit">
+					<label class="label">SU COMENTARIO</label>
+					<div class="input">
+						<textarea placeholder="" spellcheck="false" name="message" class="campo-input"></textarea>
+					</div>
+				</div>
+				<!-- end textarea -->
+
+				<!-- start response from server -->
+				<div id="response"></div>
+				<!-- end response from server -->
+
+			</div>
+			<!-- end /.content -->
+
+			<div class="footer">
+				<button type="submit" class="primary-btn">ENVIAR</button>
+			</div>
+			<!-- end /.footer -->
+
+		</form>
+		<!-- FIN FORMULARIO COMPRADO -->
+	
+	<div class="espacio_3"></div>
+	
+	<!-- INICIO BOTON DESCARGA PDF -->
+
+	
+        <a target="_blank" id="gen_field_3_param" href="https://xline3d.info/works/imod/cayala/global-assets/form-assets/form-default/Mensaje-Cargando-Imagen.pdf" download>
+			<div class="boton-pdf">
+			<p class="texto-boton-pdf">DESCARGAR PDF</p>
+			</div>
+		</a>
+
+	
+	<!-- FINAL BOTON DESCARGA PDF -->
+	
+	<div class="espacio_3"></div>
+	
+	
+	
+	
+	<!-- INICIO BOTON LINK -->
+
+<!--
+        <a target="_blank" href="https://xline3d.com">
+			<div class="boton-pdf">
+			<p class="texto-boton-pdf">ABRIR COTIZADOR WEB</p>
+			</div>
+		</a>
+-->
+	
+	<!-- FINAL BOTON LINK -->
+	
+	
+	
+	<!-- ESPACIADOR -->	
+	<div class="espacio_3"></div>
+	<div class="espacio_3"></div>
+	
+	
+	<div class="box1">
+	<h2 class="titulo1_box_1">Información de Contacto</h2>
+		
+	<div class="espacio_3"></div>
+		
+	<p class="texto_box_1">
+		
+		<p class="texto_box_1">Direcci&oacute;n Web: <a href="http://niemeyerbolivia.com" target="_blank" rel="noopener">niemeyerbolivia.com</a></p>
+		<p class="texto_box_1">Direcci&oacute;n F&iacute;sica:<br />Calacoto, Calle 9 esquina Inofuentes #263<br />La Paz, Bolivia</p>
+		<p class="texto_box_1">Google Maps: <a href="https://g.page/NiemeyerBolivia" target="_blank" rel="noopener">https://g.page/NiemeyerBolivia</a></p>
+		<p class="texto_box_1">Mail de contacto: <a href="mailto:info@niemeyerbolivia.com">info@niemeyerbolivia.com</a></p>	
+		
+    </p>
+		
+	</div>
+	
+	
+	
+	<!-- ESPACIADOR -->	
+	<div class="espacio_1"></div>
+	
+	
+	<div class="box1">
+	<h2 class="titulo1_box_1">Contacte al Whatsapp</h2>
+		
+	<div class="espacio_3"></div>
+		
+	<p class="texto_box_1">
+		
+	
+		<p>
+			<a href="https://bit.ly/IverIMODME" target="_blank" rel="noopener">https://bit.ly/IverIMODME</a><br />
+			<a href="https://bit.ly/DanielaIMODME" target="_blank" rel="noopener">https://bit.ly/DanielaIMODME</a>
+		</p>
+		
+    </p>
+		
+	</div>
+	
+	
+	
+	
+	
+<div class="espacio_inf"></div>
+	
+	
+    </div>
+<!-- FINAL DEL CONTAINER PRINCIPAL -->
+
+
+
+
+
+
+	
+<!-- INICIALIZANDO LOS SCRIPTS DEL FORMULARIO -->
+	
+	
+	<!--	El siguiente era el original del form pero se puso el 3.3.1 mas abajo -->
+	<!--	<script src="j-folder/js/jquery.1.11.1.min.js"></script>-->
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="j-folder/js/jquery.maskedinput.min.js"></script>
+	<script src="j-folder/js/jquery.validate.min.js"></script>
+	<script src="j-folder/js/jquery.form.min.js"></script>
+	<script src="j-folder/js/j-forms.js"></script>
+	
+	
+
+
+	
+	
+	
+	
+	<!-- START IMOD INTEGRATION -->
+	
+	
+	
+	<script>
+   
+		// ME
+    
+		var url = new URL (window.location.href);
+		GetAndAssignParamenter("name_param", false, false, true);
+		GetAndAssignParamenter("description_param", false, false, true);
+        GetAndAssignParamenter("description2_param", false, false, true);
+		GetAndAssignParamenter("gen_field_3_param", false, true, true);
+
+        HideIfParamEmpty("description_param");
+
+        AssignInput("description2_param","tipology");
+        AssignInput("name_param","apartment_name");
+
+        AssignFancyBox("gen_field_2_param", true);
+        AssignFancyBox("image1_param", true);
+        AssignFancyBox("image2_param", true);
+        AssignFancyBox("image3_param", true);
+        AssignFancyBox("image4_param", true);
+		AssignFancyBox("image5_param", true);
+		AssignFancyBox("image6_param", true);
+        AssignFancyBox("image7_param", true);
+        
+
+        function GetAndAssignParamenter( paramToGet, isImg, isPDF, hideIfEmpty ){
+            if(url.searchParams.get(paramToGet))
+            {
+                if(isImg)
+                {
+                    document.getElementById(paramToGet).src = url.searchParams.get(paramToGet);
+                }
+                else
+                {
+                    if(isPDF)
+                        document.getElementById(paramToGet).href = url.searchParams.get(paramToGet);
+                    else
+                        document.getElementById(paramToGet).innerHTML = url.searchParams.get(paramToGet);
+                }
+            }
+            else{
+                if(hideIfEmpty)
+                    document.getElementById(paramToGet).style.display = "none";
+            }
+        }
+        
+        function AssignFancyBox(paramToGet, hideIfEmpty){
+
+            if(hideIfEmpty && !url.searchParams.get(paramToGet))
+            {
+                document.getElementById(paramToGet + "_fancy").style.display = "none";
+            }
+            else
+            {
+                if(url.searchParams.get(paramToGet)){
+                    document.getElementById(paramToGet + "_fancy").href = url.searchParams.get(paramToGet);
+                    GetAndAssignParamenter(paramToGet,true,false);
+                }
+            }
+        }
+
+        function HideIfParamEmpty(paramToGet){
+            if(!url.searchParams.get(paramToGet))
+                document.getElementById(paramToGet + "_hide").style.display = "none";
+        }
+
+        function AssignInput(paramToGet, idInput){
+            document.getElementById(idInput).value = url.searchParams.get(paramToGet);
+        }
+
+
+		// ME END
+		
+		
+		
+		
+		// BORDE COCHOA
+		
+		
+/*		var url = new URL (window.location.href);
+		GetAndAssignParamenter("gen_field_3_param", false, false); // otro que esta disponible
+        GetAndAssignParamenter("name_param", false, false); // apunta a texto
+		GetAndAssignParamenter("description_param", false, false); // apunta a texto
+        GetAndAssignParamenter("gen_field_1_param", true, false); //en este caso apunta a la imagen estatica		
+        GetAndAssignParamenter("description2_param", false, false); // apunta a texto
+        GetAndAssignParamenter("gen_field_2_param", false, true); // apunta a descargar el PDF
+		document.getElementById("gen_field_duro_param").href = url.searchParams.get("gen_field_1_param");
+		
+
+        function GetAndAssignParamenter( paramToGet, isImg, isPDF ){
+            if(url.searchParams.get(paramToGet))
+            {
+                if(isImg)
+                {
+                    document.getElementById(paramToGet).src = url.searchParams.get(paramToGet);
+                }
+                else
+                {
+                    if(isPDF)
+                        document.getElementById(paramToGet).href = url.searchParams.get(paramToGet);
+                    else
+                        document.getElementById(paramToGet).innerHTML = url.searchParams.get(paramToGet);
+                }
+            }
+        }*/
+		
+	
+		// BORDE COCHOA END
+		
+		
+		
+	</script> 
+	<!-- END IMOD INTEGRATION -->
+	
+	
+	
+	<!-- FANCY BOX -->
+
+	
+	<!-- FANCY BOX LINKS-->
+	
+	<!--	El siguiente es no utilizado, porque se utiliza el mismo mas arriba en el formulario -->
+	<!--	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+	
+	
+
+	<link  href="fancybox-master/dist/jquery.fancybox.min.css" rel="stylesheet">
+	<script src="fancybox-master/dist/jquery.fancybox.min.js"></script>
+
+	
+	
+	
+	<!-- FANCY BOX SETTINGS -->
+	
+	<script type="text/javascript">
+	
+		$('[data-fancybox]').fancybox({
+			protect: true,
+            idleTime: 20,
+			toolbar: true,
+			buttons: [
+//			"share",
+//    		"slideShow",
+//			"fullScreen",
+			"zoom",
+//			"thumbs",	
+    		"download",
+    		"close"
+			],
+		});
+        
+        </script>
+        
+
+
+        
+        <!-- LOADER -->
+
+        <script type="text/javascript">
+            
+        $(window).on("load",function(){
+		$(".loader-wrapper").fadeOut("slow");
+		});
+        
+	
+        </script>
+
+	
+	
+</body>
 </html>
