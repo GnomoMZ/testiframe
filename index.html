@@ -1404,10 +1404,22 @@
     <!-- SCROLL IOS -->
 
     <script>
-        document.getElementById('testDebug').innerHTML = navigator.userAgent;
-        if (navigator.userAgent.match(/iPhone|iPad|iPod|iphone|ipod|ipad/i)) {
+        function iOS() {
+            return [
+                'iPad Simulator',
+                'iPhone Simulator',
+                'iPod Simulator',
+                'iPad',
+                'iPhone',
+                'iPod'
+            ].includes(navigator.platform)
+            // iPad on iOS 13 detection
+            || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+        }
 
-            document.getElementById('testDebug').innerHTML = navigator.userAgent.match(/iPhone|iPad|iPod|iphone|ipod|ipad/i) ? true : false;
+        if (iOS()) {
+
+            document.getElementById('testDebug').innerHTML = true;
 
             document.body.style.overflow = "hidden";
             window.scroll(0, 0);
