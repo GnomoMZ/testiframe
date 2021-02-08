@@ -1401,8 +1401,8 @@
                 'iPhone',
                 'iPod'
             ].includes(navigator.platform)
-            // iPad on iOS 13 detection
-            || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+                // iPad on iOS 13 detection
+                || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
         }
 
         if (iOS()) {
@@ -1420,13 +1420,13 @@
 
 
             document.addEventListener("touchmove", (event) => {
-                currentY = event.touches[0].clientY;
+                var currentY = event.touches[0].clientY;
                 scrollValue += lastTouchY - currentY;
                 if (scrollValue < 0)
                     scrollValue = 0;
 
                 //var maxScrollValue = document.body.clientHeight - window.screen.height;
-                var maxScrollValue = document.body.scrollHeight  - window.screen.height;
+                var maxScrollValue = document.body.scrollHeight - window.screen.height;
                 if (scrollValue > maxScrollValue)
                     scrollValue = maxScrollValue;
 
@@ -1438,30 +1438,28 @@
 
             var lastTime;
 
-            function step(timestamp) {
+            function cStep(timestamp) {
                 if (lastTime === undefined)
                     lastTime = timestamp;
                 elapsed = timestamp - lastTime;
                 lastTime = timestamp;
 
                 //console.log(lerp(document.documentElement.scrollTop, scrollValue, elapsed / 100));
-                window.scrollTo(0, lerp(document.documentElement.scrollTop, scrollValue, elapsed / 100));
+                window.scrollTo(0, cLerp(document.documentElement.scrollTop, scrollValue, elapsed / 100));
 
-                window.requestAnimationFrame(step);
+                window.requestAnimationFrame(cStep);
 
             }
 
-            window.requestAnimationFrame(step);
+            window.requestAnimationFrame(cStep);
 
-            function lerp(start, end, amt) {
+            function cLerp(start, end, amt) {
                 if (amt > 1)
                     amt = 1;
                 return (1 - amt) * start + amt * end;
             }
 
         }
-
-
 
     </script>
 
