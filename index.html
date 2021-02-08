@@ -43,7 +43,13 @@
 
     <style>
         /*EXAMPLES --------------------------------------------------------------------- */
-
+        .absolute{
+            color:red;
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            font-size: 22px;
+        }
 
         .left {
             display: inline-block;
@@ -1015,6 +1021,9 @@
 
 
 
+    <div class="absolute">
+        <span id="testDebug">test</span>
+    </div>
 
 
     <!-- Franja estaticas superior e inferior -->
@@ -1397,6 +1406,9 @@
     <script>
     
         if (navigator.userAgent.match(/iPhone|iPad|iPod|iphone|ipod|ipad/i)) {
+
+            document.getElementById('testDebug').innerHTML = navigator.userAgent.match(/iPhone|iPad|iPod|iphone|ipod|ipad/i) ? true : false;
+
             document.body.style.overflow = "hidden";
             window.scroll(0, 0);
 
